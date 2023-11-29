@@ -7,7 +7,7 @@ const Home =()=>{
         <div className="main-section-text">
             <h2>Share your travel stories with the world!</h2>
             <p>Discover new places, cultures, and adventures. Share your travel stories with the global community.</p>
-            <a href="#" className="cta-button">Learn More</a>
+            <a href="/about" className="cta-button">Learn More</a>
         </div>
     </section>
 
