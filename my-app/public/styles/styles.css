@@ -1,0 +1,513 @@
+body,
+a {
+   font-family: 'Arial', sans-serif;
+   margin: 0;
+   color: #fff;
+   text-decoration: none;
+}
+
+a:hover {
+   color: #ecf0f1;
+}
+
+/* Header Styles */
+
+header {
+   background-color: #3498db;
+   padding: 20px 0;
+   position: fixed;
+   width: 100%;
+   top: 0;
+   z-index: 1000;
+   display: flex;
+   justify-content: space-between; /* Align items horizontally */
+   height: 80px
+}
+
+.logo {
+   flex-grow: 1;
+   text-align: left;
+   margin-left: 70px;
+}
+
+.logo h1 {
+   font-size: 36px;
+}
+
+nav ul {
+   list-style: none;
+   display: flex;
+   margin: 0;
+}
+
+
+.nav-button {
+   display: inline-block;
+   padding: 20px 25px;
+   text-decoration: none;
+   color: #fff;
+   background-color: #0c2e45;
+   border-radius: 5px;
+   transition: background-color 0.3s ease;
+   font-size: 18px;
+   margin-right: 20px; 
+   margin-top: 10px;
+}
+
+.nav-button:hover {
+   background-color: #061f2f;
+}
+
+/* Main Section Styles */
+
+.main-section {
+   position: relative;
+   text-align: center;
+   color: #ffffff;
+   padding: 300px 0; /* Increased padding for a larger section */
+}
+
+.main-section::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1502920514313-52581002a659?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover; */
+   z-index: -1;
+}
+
+.main-section-text {
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+
+.main-section-text h2 {
+   font-size: 48px; /* Increased font size */
+   margin-bottom: 20px;
+   color: #ffffff;
+}
+
+.main-section-text p {
+   font-size: 18px;
+   margin-bottom: 30px;
+}
+
+.cta-button {
+   display: inline-block;
+   padding: 20px 40px; /* Increased padding for a larger button */
+   background-color: #fff;
+   color: #3498db;
+   border-radius: 5px;
+   font-size: 18px;
+   transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+   background-color: #3498db;
+   color: #fff;
+}
+
+/* Featured Stories Styles */
+
+.featured-stories {
+   text-align: center;
+   padding: 40px 0;
+}
+
+.featured-stories h2 {
+   font-size: 28px;
+   color: #333;
+   margin-bottom: 20px;
+}
+
+.story-card {
+   background-color: #fff;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   padding: 20px;
+   margin-bottom: 20px;
+   text-align: left;
+}
+
+.story-card h3 {
+   color: #3498db;
+   font-size: 24px;
+   margin-bottom: 10px;
+}
+
+.story-card p {
+   color: #555;
+   font-size: 16px;
+   margin-bottom: 15px;
+}
+
+.story-card a {
+   display: inline-block;
+   background-color: #3498db;
+   color: #fff;
+   padding: 10px 20px;
+   text-decoration: none;
+   border-radius: 5px;
+   transition: background-color 0.3s ease;
+}
+
+.story-card a:hover {
+   background-color: #2980b9;
+}
+
+/* ----------- */
+
+
+
+
+/* about page */
+.about-page {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+.about-section {
+   text-align: center;
+   max-width: 800px;
+   margin: 100px auto;
+   padding: 40px 20px;
+   
+}
+
+.about-section h2 {
+   font-size: 36px;
+   margin-bottom: 20px;
+   color: #2980b9;
+}
+
+.about-section p {
+   font-size: 18px;
+   line-height: 1.6;
+   color: #333;
+   margin-bottom: 20px;
+   background-color: #f9f9f9;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin-top: 20px;
+}
+
+.interesting-fact {
+   background-color: #f9f9f9;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin-top: 20px;
+}
+
+.interesting-fact h3 {
+   font-size: 24px;
+   color: #2980b9;
+   margin-bottom: 10px;
+}
+
+.interesting-fact p {
+   font-size: 16px;
+   color: #555;
+   line-height: 1.4;
+}
+
+
+
+footer {
+   background-color: #333;
+   color: #fff;
+   text-align: center;
+   padding: 10px 0;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+}
+
+
+form {
+   display: flex;
+   flex-direction: column;
+}
+
+label {
+   font-size: 18px;
+   margin-bottom: 8px;
+   color: #0d79d7;
+}
+
+input {
+   padding: 15px;
+   margin-bottom: 16px;
+   font-size: 18px;
+   border: 1px solid #3498db; /* Blue border */
+   border-radius: 5px;
+   color: #333; /* Text color */
+}
+
+button {
+   padding: 15px 25px;
+   font-size: 18px;
+   color: #fff;
+   background-color: #3498db; /* Blue background */
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+button:hover {
+   background-color: #1a5276; /* Darker blue on hover */
+}
+
+
+
+/* login section */
+body {
+   background: url('https://images.unsplash.com/photo-1541346406486-7a642e80c0a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover fixed; /* Set the image path and properties */
+   margin: 0;
+   padding: 0;
+   font-family: 'Arial', sans-serif;
+   color: #fff;
+}
+
+.login-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   text-align: center;
+}
+
+.login-section {
+   max-width: 400px;
+   margin: 0 auto;
+   background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background */
+   padding: 40px;
+   border-radius: 8px; /* Optional: Add rounded corners for the login section */
+}
+
+.login-section h2 {
+   font-size: 36px;
+   margin-bottom: 20px;
+   color: #3498db; /* Blue color */
+}
+
+.login-container label {
+   display: block;
+   font-size: 16px;
+   margin-bottom: 8px;
+   text-align: left;
+}
+
+
+/* register page */
+#register-page {
+   background: url('your-background-image.jpg') center/cover fixed; /* Set the background image path and properties */
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+#register {
+   background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the form */
+   padding: 30px;
+   border-radius: 8px; /* Optional: Add rounded corners for the form */
+   max-width: 400px;
+   width: 100%;
+   text-align: center;
+}
+
+#register h2 {
+   font-size: 36px;
+   margin-bottom: 20px;
+   color: #3498db; /* Blue color */
+}
+
+#register label {
+   display: block;
+   font-size: 16px;
+   margin-bottom: 8px;
+   text-align: left;
+}
+
+#register input {
+   width: calc(100% - 20px); /* Adjust the width and add a bit of spacing on the sides */
+   padding: 10px;
+   margin: 0 auto 16px; /* Center the input fields */
+   display: block; /* Make the inputs block elements */
+   border: 1px solid #3498db;
+   border-radius: 5px;
+   font-size: 16px;
+}
+
+#register .btn.submit {
+   background-color: #3498db;
+   color: #fff;
+   padding: 12px;
+   border: none;
+   border-radius: 5px;
+   font-size: 18px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+#register .btn.submit:hover {
+   background-color: #1a5276; /* Darker blue on hover */
+}
+
+#register .field {
+   font-size: 14px;
+   margin-top: 20px;
+}
+
+#register .field a {
+   color: #3498db;
+   text-decoration: none;
+   transition: color 0.3s ease;
+}
+
+#register .field a:hover {
+   color: #1a5276; /* Darker blue on hover */
+}
+
+/* add story page */
+
+#create-page {
+   background: url('your-background-image.jpg') center/cover fixed; /* Set the background image path and properties */
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+#create {
+   background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the form */
+   padding: 20px;
+   border-radius: 8px; /* Optional: Add rounded corners for the form */
+   max-width: 400px;
+   width: 100%;
+   text-align: center;
+}
+
+#create h1 {
+   font-size: 36px;
+   margin-bottom: 20px;
+   color: #3498db; /* Blue color */
+}
+
+#create label {
+   display: block;
+   font-size: 16px;
+   margin-bottom: 8px;
+   text-align: left; /* Align the labels to the left */
+}
+
+#create input,
+#create textarea {
+   width: calc(100% - 20px);
+   padding: 10px;
+   margin: 0 auto 16px; /* Add more margin-bottom for space between inputs and the button */
+   display: block;
+   border: 1px solid #3498db;
+   border-radius: 5px;
+   font-size: 16px;
+}
+
+#create .btn.submit {
+   background-color: #3498db;
+   color: #fff;
+   padding: 12px;
+   border: none;
+   border-radius: 5px;
+   font-size: 18px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+#create .btn.submit:hover {
+   background-color: #1a5276; /* Darker blue on hover */
+}
+
+
+/* story list page */
+.all-stories-page {
+   padding: 20px;
+}
+
+.all-stories-page .container {
+   margin-top: 150px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   justify-content: center;
+   align-items: flex-start; /* Align items to the top */
+   text-align: center; /* Center-align text within the container */
+   margin-top: 90px; /
+}
+
+.all-stories-page .story-card {
+   background-color: #fff;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   width: 300px;
+   text-align: center;
+   transition: transform 0.3s ease;
+}
+
+.all-stories-page .story-card img {
+   width: 100%;
+   height: 200px;
+   object-fit: cover;
+   border-bottom: 1px solid #ddd;
+}
+
+.all-stories-page .story-info {
+   padding: 20px;
+}
+
+.all-stories-page .story-info h6 {
+   color: #3498db;
+   font-size: 14px;
+   margin-bottom: 8px;
+}
+
+.all-stories-page .story-info h2 {
+   font-size: 18px;
+   margin-bottom: 12px;
+}
+
+.all-stories-page .details-button {
+   display: inline-block;
+   background-color: #3498db;
+   color: #fff;
+   padding: 8px 16px;
+   text-decoration: none;
+   border-radius: 5px;
+   transition: background-color 0.3s ease;
+}
+
+.all-stories-page .details-button:hover {
+   background-color: #1a5276;
+}
+
+
+.all-stories-page h1 {
+   display: inline-block;
+   width: 100%;
+   font-size: 36px;
+   margin-bottom: 20px;
+   color: #3498db;
+   background-color: #fff; /* Set the background color to white */
+   display: inline-block;
+   padding: 10px; /* Add padding for space around the text */
+   border-radius: 8px; /* Add rounded corners for a better visual appeal */
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
