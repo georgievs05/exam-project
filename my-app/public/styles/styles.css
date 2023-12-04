@@ -113,49 +113,77 @@ nav ul {
 /* Featured Stories Styles */
 
 .featured-stories {
-   text-align: center;
-   padding: 40px 0;
+   padding: 20px;
 }
 
-.featured-stories h2 {
-   font-size: 28px;
-   color: #333;
-   margin-bottom: 20px;
+.featured-stories .container {
+   margin-top: 150px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   justify-content: center;
+   align-items: flex-start; /* Align items to the top */
+   text-align: center; /* Center-align text within the container */
+   margin-top: 90px;
 }
 
-.story-card {
+.featured-stories .story-card {
    background-color: #fff;
    border-radius: 8px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   width: 300px;
+   text-align: center;
+   transition: transform 0.3s ease;
+}
+
+.featured-stories .story-card img {
+   width: 100%;
+   height: 200px;
+   object-fit: cover;
+   border-bottom: 1px solid #ddd;
+}
+
+.featured-stories .story-info {
    padding: 20px;
-   margin-bottom: 20px;
-   text-align: left;
 }
 
-.story-card h3 {
+.featured-stories .story-info h6 {
    color: #3498db;
-   font-size: 24px;
-   margin-bottom: 10px;
+   font-size: 14px;
+   margin-bottom: 8px;
 }
 
-.story-card p {
-   color: #555;
-   font-size: 16px;
-   margin-bottom: 15px;
+.featured-stories .story-info h2 {
+   font-size: 18px;
+   margin-bottom: 12px;
 }
 
-.story-card a {
+.featured-stories .details-button {
    display: inline-block;
    background-color: #3498db;
    color: #fff;
-   padding: 10px 20px;
+   padding: 8px 16px;
    text-decoration: none;
    border-radius: 5px;
    transition: background-color 0.3s ease;
 }
 
-.story-card a:hover {
-   background-color: #2980b9;
+.featured-stories .details-button:hover {
+   background-color: #1a5276;
+}
+
+.featured-stories h2 {
+   display: inline-block;
+   width: 100%;
+   font-size: 36px;
+   margin-bottom: 20px;
+   color: #3498db;
+   background-color: #ffffff4d;
+   display: inline-block;
+   padding: 10px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* ----------- */
@@ -304,6 +332,15 @@ body {
    margin-bottom: 8px;
    text-align: left;
 }
+.login-section .field a {
+   color: #3498db;
+   text-decoration: none;
+   transition: color 0.3s ease;
+}
+
+.login-section .field span {
+   color: #000;
+}
 
 
 /* register page */
@@ -371,6 +408,10 @@ body {
    color: #3498db;
    text-decoration: none;
    transition: color 0.3s ease;
+}
+
+#register .field span{
+   color: #000;
 }
 
 #register .field a:hover {
@@ -482,6 +523,7 @@ body {
 .all-stories-page .story-info h2 {
    font-size: 18px;
    margin-bottom: 12px;
+   color: #000;
 }
 
 .all-stories-page .details-button {

@@ -15,7 +15,7 @@ export default function AddStory(){
             <input type="text" id="location" name="location" placeholder="Enter story location..."/>
 
             <label htmlFor="date">Date:</label>
-            <input type="date" id="date" name="date"/>
+            <input type="text" id="date" name="date" placeholder="Enter the date of your story..."/>
 
             <label htmlFor="cover-image">Cover Image:</label>
             <input type="text" id="imageUrl" name="imageUrl" placeholder="Upload a cover photo..."/>
