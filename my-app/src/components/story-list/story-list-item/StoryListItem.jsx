@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom"
+
 export default function StoryListItem({
+    _id,
     imageUrl,
     location,
     title
@@ -10,7 +13,7 @@ export default function StoryListItem({
             <div className="story-info">
                 <h6>{location}</h6>
                 <h2>{title}</h2>
-                <a href="#" className="details-button">Details</a>
+                <Link to= {`/stories/${_id}`}className="details-button">Details</Link>
             </div>
         </div>
     )

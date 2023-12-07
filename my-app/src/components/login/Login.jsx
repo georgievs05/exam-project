@@ -1,14 +1,49 @@
+import { useContext } from "react";
+import useForm from "../../hooks/useForm"
+import AuthContext from "../../contexts/authContext";
+
+
+
+const LoginFormKeys = {
+  Email: 'email',
+  Password: 'password'
+}
+
+
 const Login = () =>{
+  const {loginSubmitHandler} = useContext(AuthContext)
+  const {values, onChange, onSubmit} = useForm(loginSubmitHandler, {
+      [LoginFormKeys.Email]: '',
+      [LoginFormKeys.Password]: '',
+  });
+
+
+
   return(
      <main className="login-container">
        <section className="login-section">
     <h2>Login to your profile</h2>
-        <form action="#" method="POST">
-            <label htmlFor="username">Username:</label>
-            <input type="text" id="username" name="username" required/>
+        <form id="login" onSubmit={onSubmit}>
+            <label htmlFor="username">Email:</label>
+            <input 
+            type="email" 
+            id="email" 
+            name={LoginFormKeys.Email} 
+            placeholder="stanimir@gmail.com"
+            onChange={onChange}
+            value={values[LoginFormKeys.Email]}
+            required
+            />
 
             <label htmlFor="password">Password:</label>
-            <input type="password" id="password" name="password" required/>
+            <input 
+            type="password"
+            id="password" 
+            name={LoginFormKeys.Password}
+            onChange={onChange}
+            value={values[LoginFormKeys.Password]}
+            required
+            />
 
             <button type="submit" className="login-button">Login</button>
 

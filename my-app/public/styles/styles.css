@@ -88,6 +88,7 @@ nav ul {
    font-size: 48px; /* Increased font size */
    margin-bottom: 20px;
    color: #ffffff;
+   font-style: italic ;
 }
 
 .main-section-text p {
@@ -553,3 +554,184 @@ body {
    border-radius: 8px; /* Add rounded corners for a better visual appeal */
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 }
+
+
+
+/* story detils css */
+
+.details-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+}
+
+.details-container h1 {
+   font-size: 36px;
+   margin-bottom: 30px;
+   color: #3498db;
+   background-color: #fff; /* Background color for the "box" */
+    padding: 10px 20px; /* Adjust padding to control the size of the "box" */
+    border-radius: 4px; /* Add rounded corners for a better visual appeal */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.details-container span{
+   color: #3498db;
+   background-color: #fff; /* Background color for the "box" */
+   padding: 10px 20px; /* Adjust padding to control the size of the "box" */
+   border-radius: 8px; /* Add rounded corners for a better visual appeal */
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+   display: inline-block;
+}
+.details-container p{
+   color: #3498db;
+   background-color: #fff; /* Background color for the "box" */
+   padding: 10px 20px; /* Adjust padding to control the size of the "box" */
+   border-radius: 8px; /* Add rounded corners for a better visual appeal */
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+   display: inline-block;
+}
+
+
+
+
+.details-container .story-picture {
+   width: 60%; /* Make the image take up the full width of its container */
+   height: auto; /* Maintain the aspect ratio */
+   border-radius: 8px; /* Add rounded corners */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+   object-fit: cover; 
+   margin-bottom: 20px;
+}
+
+.details-container .text {
+   color: #3498db;
+   font-size: 20px;
+   line-height: 1.6;
+   margin-bottom: 20px;
+   background-color: #fff;
+   padding: 15px; /* Adjust padding to control the size of the "box" */
+    border-radius: 8px; /* Add rounded corners for a better visual appeal */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.details-container .buttons {
+   margin-top: 20px;
+}
+
+.details-container .button {
+   display: inline-block;
+   padding: 10px 20px;
+   text-decoration: none;
+   color: #fff;
+   background-color: #3498db;
+   border-radius: 5px;
+   transition: background-color 0.3s ease;
+   margin-right: 10px;
+}
+
+.details-container .button:hover {
+   background-color: #1a5276;
+}
+
+.details-container .details-comments h2 {
+   font-size: 24px;
+   color: #3498db;
+   margin-bottom: 10px;
+}
+
+.details-container .comment p {
+   margin-bottom: 10px;
+}
+
+.details-container .no-comment {
+   color: #555;
+}
+
+.details-container .create-comment {
+   text-align: center; /* Center-align the create comment section */
+   margin-top: 20px; 
+}
+
+.details-container label {
+   font-size: 18px;
+   margin-bottom: 8px;
+   color: #0d79d7;
+}
+
+.details-container form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.details-container textarea {
+   padding: 15px;
+   margin-bottom: 16px;
+   font-size: 18px;
+   border: 1px solid #3498db;
+   border-radius: 5px;
+   color: #333;
+}
+
+.details-container .btn.submit {
+   padding: 15px 25px;
+   font-size: 18px;
+   color: #fff;
+   background-color: #3498db;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.details-container .btn.submit:hover {
+   background-color: #1a5276;
+}
+
+.details-container .info-section {
+   background-color: #88b8ddc5; /* Set the background color to white or your preferred color */
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   padding: 20px; /* Adjust the padding as needed */
+}
+
+.details-container .story-header {
+   text-align: center; /* Center-align the content within the container */
+}
+
+
+.details-container .text,
+.details-container .date,
+.details-container .buttons {
+   text-align: center; /* Center-align these elements within the container */
+   margin-bottom: 20px; /* Add some space between these elements and the other content */
+}
+
+.details-container .comment {
+   margin-bottom: 10px; /* Add some space between individual comments */
+}
+
+.details-container .create-comment {
+   text-align: center; /* Center-align the create comment section */
+   margin-top: 20px; /* Add some space between the create comment section and the comments */
+}
+
+.details-container .create-comment label{
+   color: #000;
+   font-size: 25px;
+   background-color: #fff; /* Background color for the "box" */
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+   border-radius: 8px; 
+   padding: 10px 20px;
+   margin: 30px 0;
+}
+.details-container .details-comments {
+   background-color: #88b8ddc5; /* Set the background color to your preferred color */
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   padding: 20px; /* Adjust the padding as needed */
+   margin-top: 20px; /* Add some space between the comment section and the other content */
+}
+
