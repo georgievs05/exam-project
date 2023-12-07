@@ -1,10 +1,27 @@
+import { useNavigate } from "react-router-dom"
+import * as storyService from "../../services/storyService"
+
+
 export default function AddStory(){
+    const navigate = useNavigate()
+
+    const addStorySubmitHandler = async (e)=>{
+        e.preventDefault();
+
+        const storyData = Object.fromEntries(new FormData(e.currentTarget))
+
+        try {
+            await storyService.create(storyData)
+            navigate('/stories')
+            
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     return(
         <section id="create-page" className="auth">
-    <form id="create" 
-    // onSubmit={createStorySubmitHandler}
-    >
+      <form id="create" onSubmit={addStorySubmitHandler}>
         <div className="container">
 
             <h1>Add your travel story</h1>
@@ -21,7 +38,7 @@ export default function AddStory(){
             <input type="text" id="imageUrl" name="imageUrl" placeholder="Upload a cover photo..."/>
 
             <label htmlFor="story-content">Story Content:</label>
-            <textarea name="story-content" id="story-content" placeholder="Write your travel story..."></textarea>
+            <textarea name="storyContent" id="story-content" placeholder="Write your travel story..."></textarea>
             <input className="btn submit" type="submit" value="Create Story"/>
         </div>
     </form>
