@@ -14,7 +14,6 @@ export const getOne = async (storyId) =>{
     return result
 }
 
-    
 export const create = async (storyData) => {
  const result = await request("POST", baseUrl, storyData)
  return result
@@ -33,4 +32,12 @@ export const getLatest = async () => {
     const result = await request("GET", `${baseUrl}?sortBy=_createdOn%20desc&${query}`);
 
     return result;
+}
+
+export const getUsersStories = async (userId) => {
+    const allStories = await request("GET", baseUrl);
+    
+    const userStories = allStories.filter(story => story._ownerId === userId);
+
+    return userStories;
 }

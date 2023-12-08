@@ -12,8 +12,8 @@ location
         <div className="story-card">
             <img src={imageUrl} alt="Travel Story Image"/>
             <div className="story-info">
-                <h6>{location}</h6>
-                <h2>{title}</h2>
+                <h3>{location}</h3>
+                <h4>{title}</h4>
                 <Link to={`/stories/${_id}`} className="details-button">Details</Link>
             </div>
         </div>

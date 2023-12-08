@@ -16,6 +16,8 @@ import StoryDetails from './components/story-details/StoryDetails'
 import Logout from './components/logout/Logout'
 import Footer from './components/footer/Footer'
 import StoryEdit from './components/edit-story/EditStory'
+import MyProfile from './components/myProfile/MyProfile'
+import NotFound from './components/pageNotFound/PageNotFound'
 
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
       <Route path='/stories/:storyId' element={<StoryDetails/>}/>
       <Route path='/stories/:storyId/edit' element={<StoryEdit/>}/>
       <Route path="/logout" element={<Logout/>}/>
+      <Route path='/myprofile' element={<MyProfile/>}/>
+      <Route path='*' element={<NotFound/>}/>
       </Routes>
 
       <Footer/>

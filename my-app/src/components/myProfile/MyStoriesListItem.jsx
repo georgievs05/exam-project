@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 
-export default function StoryListItem({
+
+export default function MyStoryiesListItem({
     _id,
     imageUrl,
     location,

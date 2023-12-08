@@ -150,13 +150,14 @@ nav ul {
    padding: 20px;
 }
 
-.featured-stories .story-info h6 {
+.featured-stories .story-info h3{
    color: #3498db;
-   font-size: 14px;
+   font-size: 20px;
    margin-bottom: 8px;
 }
 
-.featured-stories .story-info h2 {
+.featured-stories .story-info h4 {
+   color: #000;
    font-size: 18px;
    margin-bottom: 12px;
 }
@@ -516,9 +517,9 @@ body {
    padding: 20px;
 }
 
-.all-stories-page .story-info h6 {
+.all-stories-page .story-info h3 {
    color: #3498db;
-   font-size: 14px;
+   font-size: 20px;
    margin-bottom: 8px;
 }
 
@@ -565,6 +566,7 @@ body {
    flex-direction: column;
    align-items: center;
    text-align: center;
+   margin-bottom: 80px;
 }
 
 .details-container h1 {
@@ -763,4 +765,105 @@ footer {
 
 .footer-content p:first-child {
    margin-bottom: 10px;
+}
+
+
+/* my profile section */
+#my-profile {
+   display: flex;
+   justify-content: space-around;
+   padding: 20px;
+   margin-top: 140px;
+}
+
+#my-profile .profile-info,
+#my-profile .profile-actions {
+   flex: 1;
+   margin: 0 20px;
+}
+
+#my-profile .profile-info h1 {
+   font-size: 60px;
+   color: #00101b;
+   
+}
+
+#my-profile .avatar {
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+   margin-bottom: 10px;
+}
+
+#my-profile .profile-info p {
+   font-size: 40px;
+   color: #00101b;
+   margin-bottom: 10px;
+   margin-top: 300px;
+}
+
+#my-profile .profile-actions h2 {
+   font-size: 30px;
+   margin-bottom: 10px;
+   color: #00101b;
+
+}
+
+#my-profile .story-card {
+   display: flex;
+   align-items: center;
+   background-color: #fff;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin-bottom: 20px;
+}
+
+#my-profile .story-card img {
+   max-width: 150px;
+   border-radius: 8px 0 0 8px;
+}
+
+#my-profile .story-info {
+   padding: 20px;
+}
+
+#my-profile .story-info h3 {
+   font-size: 18px;
+   margin-bottom: 5px;
+   color: #0d79d7;
+}
+
+#my-profile .story-info h2 {
+   font-size: 24px;
+   margin-bottom: 10px;
+   color: #0d79d7;
+}
+
+#my-profile .details-button {
+   display: inline-block;
+   background-color: #3498db;
+   color: #fff;
+   padding: 10px 20px;
+   text-decoration: none;
+   border-radius: 5px;
+   transition: background-color 0.3s ease;
+}
+
+#my-profile .details-button:hover {
+   background-color: #2980b9;
+}
+
+
+.notfound {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   text-align: center;
+}
+
+.notfound h1 {
+   font-size: 70px;
+   color: #333; /* Change the color to your preference */
+   margin: 0;
 }

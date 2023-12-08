@@ -22,7 +22,7 @@ const reducer = (state, action) => {
 
 export default function StoryDetails(){
     const navigate = useNavigate()
-    const {email, userId} = useContext(AuthContext)
+    const {email, userId,isAuthenticated} = useContext(AuthContext)
     const [story, setStory] = useState({})
     const [comments, dispatch ] = useReducer(reducer, [])
     const {storyId} = useParams()
@@ -116,14 +116,17 @@ export default function StoryDetails(){
                 </div>
 
                
+               {isAuthenticated && (
+                 <article className="create-comment">
+                 <label>Add new comment:</label>
+                 <form className="form" onSubmit={onSubmit}>
+                     <textarea name="comment" value={values.comment} onChange={onChange} placeholder="Write your comment here..."></textarea>
+                     <input className="btn submit" type="submit" value="Add Comment"/>
+                 </form>
+                </article>
+               )}
 
-            <article className="create-comment">
-                <label>Add new comment:</label>
-                <form className="form" onSubmit={onSubmit}>
-                    <textarea name="comment" value={values.comment} onChange={onChange} placeholder="Write your comment here..."></textarea>
-                    <input className="btn submit" type="submit" value="Add Comment"/>
-                </form>
-            </article>
+           
         </section>
     </main>
     )
