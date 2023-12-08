@@ -27,3 +27,10 @@ export const edit = async (storyId, storyData) => {
 };
 
 export const remove = async (storyId) => request("DELETE", `${baseUrl}/${storyId}`);
+
+export const getLatest = async () => {
+    const query = encodeURIComponent(`offset=0&pageSize=3`);
+    const result = await request("GET", `${baseUrl}?sortBy=_createdOn%20desc&${query}`);
+
+    return result;
+}

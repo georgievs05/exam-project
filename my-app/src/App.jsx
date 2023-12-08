@@ -5,9 +5,6 @@ import { Routes , Route , useNavigate} from 'react-router-dom'
 import {AuthProvider} from './contexts/authContext'
 import Path from "./paths"
 
-
-
-
 import Header from './components/header/Header'
 import Home from './components/home/Home'
 import About from './components/About'
@@ -19,9 +16,6 @@ import StoryDetails from './components/story-details/StoryDetails'
 import Logout from './components/logout/Logout'
 import Footer from './components/footer/Footer'
 import StoryEdit from './components/edit-story/EditStory'
-
-
-
 
 
 function App() {
