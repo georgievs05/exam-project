@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import useForm from "../../hooks/useForm"
 import AuthContext from "../../contexts/authContext";
+import {Navigate} from "react-router-dom"
+import { useState } from "react";
 
 
 
@@ -11,7 +13,14 @@ const LoginFormKeys = {
 
 
 const Login = () =>{
-  const {loginSubmitHandler} = useContext(AuthContext)
+  
+  const{isAuthenticated}= useContext(AuthContext)
+  if(isAuthenticated){
+      return <Navigate to="/"/>
+  }
+
+
+  const {loginSubmitHandler,errMessage} = useContext(AuthContext)
   const {values, onChange, onSubmit} = useForm(loginSubmitHandler, {
       [LoginFormKeys.Email]: '',
       [LoginFormKeys.Password]: '',
@@ -22,7 +31,7 @@ const Login = () =>{
   return(
      <main className="login-container">
        <section className="login-section">
-    <h2>Login to your profile</h2>
+        <h2>Login to your profile</h2>
         <form id="login" onSubmit={onSubmit}>
             <label htmlFor="username">Email:</label>
             <input 
@@ -42,11 +51,15 @@ const Login = () =>{
             name={LoginFormKeys.Password}
             onChange={onChange}
             value={values[LoginFormKeys.Password]}
+            placeholder="********"
             required
             />
 
             <button type="submit" className="login-button">Login</button>
 
+            <p className="error-msg">
+                    <span>{errMessage.message}</span>
+                </p>
             <p className="field">
                     <span>If you don't have profile click <a href="/register">here</a></span>
                 </p>

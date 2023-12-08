@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import AuthContext from "../../contexts/authContext"
 import useForm from "../../hooks/useForm"
+import {Navigate} from "react-router-dom"
 
 
 const RegisterFormKeys ={
@@ -12,15 +13,25 @@ const RegisterFormKeys ={
 
 
 export default function Register(){
-    const {registerSubmitHandler} = useContext(AuthContext)
+     const{isAuthenticated}= useContext(AuthContext)
+      if(isAuthenticated){
+      return <Navigate to="/"/>
+        }
+
+
+    const {registerSubmitHandler, errMessage} = useContext(AuthContext)
     const {values, onChange, onSubmit} = useForm(registerSubmitHandler,{
     [RegisterFormKeys.Emai] : "",
     [RegisterFormKeys.Password] : "",
     [RegisterFormKeys.ConfirmPassword]:""
       })
+
+   
+
+
+
     return(
-       
-        <section id="register-page" className="register-page">
+    <section id="register-page" className="register-page">
         <form id="register" onSubmit={onSubmit}>
             <div className="container">
                 <div className="brand-logo"></div>
@@ -43,7 +54,8 @@ export default function Register(){
                 id="register-password"
                 placeholder="********"
                 onChange={onChange}
-                values={values[RegisterFormKeys.Password]}/>
+                values={values[RegisterFormKeys.Password]}
+                required/>
 
                 <label htmlFor="con-pass">Confirm Password:</label>
                 <input 
@@ -53,6 +65,7 @@ export default function Register(){
                 placeholder="********"
                 onChange={onChange}
                 values={values[RegisterFormKeys.ConfirmPassword]}
+                required
                 />
 
                 <input 
@@ -60,6 +73,10 @@ export default function Register(){
                 type="submit" 
                 value="Register"
                 />
+
+                <p className="error-msg">
+                    <span>{errMessage.message}</span>
+                </p>
 
                 <p className="field">
                     <span>If you already have profile click <a href="/login">here</a></span>

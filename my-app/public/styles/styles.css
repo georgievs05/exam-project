@@ -331,9 +331,14 @@ body {
    transition: color 0.3s ease;
 }
 
+.login-section .error-msg span {
+   color: #d50000;
+}
+
 .login-section .field span {
    color: #000;
 }
+
 
 
 /* register page */
@@ -405,6 +410,10 @@ body {
 
 #register .field span{
    color: #000;
+}
+
+#register .error-msg span{
+   color: #d50000;
 }
 
 #register .field a:hover {
