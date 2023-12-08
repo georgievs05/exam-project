@@ -1,38 +1,73 @@
-import { useContext, useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useContext, useEffect, useState, useReducer} from "react"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
 import * as storyServise from "../../services/storyService";
 import * as commentService from "../../services/commentService"
 import AuthContext from "../../contexts/authContext";
+import useForm from "../../hooks/useForm";
+
+const reducer = (state, action) => {
+    switch (action?.type) {
+        case 'GET_ALL_COMMENTS':
+            return [...action.payload];
+        case 'ADD_COMMENT':
+            return [...state, action.payload];
+        case 'EDIT_COMMENT':
+            return state.map(c => c._id === action.payload._id ? { ...c, text: action.payload.text } : c)
+        default:
+            return state;
+    }
+}
+
 
 export default function StoryDetails(){
-    const {email} = useContext(AuthContext)
+    const navigate = useNavigate()
+    const {email, userId} = useContext(AuthContext)
     const [story, setStory] = useState({})
-    const [comments,setComments] = useState([])
+    const [comments, dispatch ] = useReducer(reducer, [])
     const {storyId} = useParams()
 
-    useEffect(()=>{
+    useEffect(() => {
         storyServise.getOne(storyId)
-        .then(setStory)
-        
+            .then(setStory);
+
         commentService.getAll(storyId)
-        .then(setComments)
-    }, [storyId])
+            .then((result) => {
+                dispatch({
+                    type: 'GET_ALL_COMMENTS',
+                    payload: result,
+                });
+            });
+    }, [storyId]);
 
-
-    const addCommentHandler =async(e)=>{
-        e.preventDefault()
-
-        const formData = new FormData(e.currentTarget)
-
+    const addCommentHandler = async (values) => {
         const newComment = await commentService.create(
             storyId,
-            formData.get("comment")
+            values.comment
         );
 
-        setComments(state => [...state, {...newComment, owner:{email}}])
+        newComment.owner = { email };
 
+        dispatch({
+            type: 'ADD_COMMENT',
+            payload: newComment
+        })
     }
+
+    const deleteButtonClickHandler = async () => {
+        const hasConfirmed = confirm(`Are you sure you want to delete ${story.title}`);
+
+        if (hasConfirmed) {
+            await storyServise.remove(storyId);
+
+            navigate('/stories');
+        }
+    }
+    console.log(userId, story._ownerId)
+
+    const { values, onChange, onSubmit } = useForm(addCommentHandler, {
+        comment: '',
+    });
 
     return(
         <main className="details-container">
@@ -53,11 +88,13 @@ export default function StoryDetails(){
 
                 <p className="date">Date: {story.date}</p>
                 
-                {/* <!-- Edit/Delete buttons ( Only visible for the creator of this story ) --> */}
-                   <div className="buttons">
-                    <a href="#" className="button">Edit</a>
-                    <a href="#" className="button">Delete</a>
+                {userId === story._ownerId && (
+                    <div className="buttons">
+                    <Link to={`/stories/${story._id}/edit`} className="button">Edit</Link>
+                    <a className="button" onClick={deleteButtonClickHandler}>Delete</a>
                 </div>
+                )}
+                   
             </div>
 
 
@@ -73,9 +110,7 @@ export default function StoryDetails(){
                         <p>{email}: {text}</p>
                          </li>
                     ))}
-                        {/* <!-- Add more comments dynamically based on your data --> */}
-
-                        {/* <!-- No comments message --> */}
+                      
                         {comments.length === 0 &&<p className="no-comment">No comments yet.</p>}
                     </ul>
                 </div>
@@ -84,8 +119,8 @@ export default function StoryDetails(){
 
             <article className="create-comment">
                 <label>Add new comment:</label>
-                <form className="form" onSubmit={addCommentHandler}>
-                    <textarea name="comment" placeholder="Comment......"></textarea>
+                <form className="form" onSubmit={onSubmit}>
+                    <textarea name="comment" value={values.comment} onChange={onChange} placeholder="Write your comment here..."></textarea>
                     <input className="btn submit" type="submit" value="Add Comment"/>
                 </form>
             </article>

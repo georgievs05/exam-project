@@ -136,6 +136,7 @@ nav ul {
    width: 300px;
    text-align: center;
    transition: transform 0.3s ease;
+   margin-bottom: 80px;
 }
 
 .featured-stories .story-card img {
@@ -248,15 +249,6 @@ nav ul {
 
 
 
-footer {
-   background-color: #333;
-   color: #fff;
-   text-align: center;
-   padding: 10px 0;
-   position: fixed;
-   bottom: 0;
-   width: 100%;
-}
 
 
 form {
@@ -346,7 +338,7 @@ body {
 
 /* register page */
 #register-page {
-   background: url('your-background-image.jpg') center/cover fixed; /* Set the background image path and properties */
+   background:  center/cover fixed; /* Set the background image path and properties */
    height: 100vh;
    display: flex;
    align-items: center;
@@ -422,7 +414,7 @@ body {
 /* add story page */
 
 #create-page {
-   background: url('your-background-image.jpg') center/cover fixed; /* Set the background image path and properties */
+   background:  center/cover fixed; /* Set the background image path and properties */
    height: 100vh;
    display: flex;
    align-items: center;
@@ -597,7 +589,7 @@ body {
 
 
 .details-container .story-picture {
-   width: 60%; /* Make the image take up the full width of its container */
+   width: 30%; /* Make the image take up the full width of its container */
    height: auto; /* Maintain the aspect ratio */
    border-radius: 8px; /* Add rounded corners */
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
@@ -639,6 +631,7 @@ body {
    font-size: 24px;
    color: #3498db;
    margin-bottom: 10px;
+   text-align: center;
 }
 
 .details-container .comment p {
@@ -716,6 +709,7 @@ body {
 .details-container .create-comment {
    text-align: center; /* Center-align the create comment section */
    margin-top: 20px; /* Add some space between the create comment section and the comments */
+   margin-bottom: 90px;
 }
 
 .details-container .create-comment label{
@@ -735,3 +729,29 @@ body {
    margin-top: 20px; /* Add some space between the comment section and the other content */
 }
 
+
+
+/* footer css */
+footer {
+   background-color: #34495e;
+   color: #ecf0f1;
+   padding: 20px;
+   text-align: center;
+   position: fixed;
+   width: 100%;
+   bottom: 0;
+}
+
+.footer-content {
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+.footer-content p {
+   margin: 0;
+   font-size: 14px;
+}
+
+.footer-content p:first-child {
+   margin-bottom: 10px;
+}

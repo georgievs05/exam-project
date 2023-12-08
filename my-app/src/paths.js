@@ -1,6 +1,8 @@
 const Path=  {
-    Home: "/"
-}
+    Home: '/',
+    Logout: '/logout',
+    StoryEdit: '/stories/:storyId/edit',
+    StoryDelete: '/stories/:storyId/delete',
+    StoryDetails: '/stories/:storyId',}
 
-export default
-Path
+export default Path

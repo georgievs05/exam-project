@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Routes , Route , useNavigate} from 'react-router-dom'
 
-import * as authService from "./services/authService"
-import AuthContext from "./contexts/authContext"
+
+import {AuthProvider} from './contexts/authContext'
 import Path from "./paths"
 
 
@@ -17,52 +17,17 @@ import AddStory from './components/add-story/AddStory'
 import StoryList from './components/story-list/StoryList'
 import StoryDetails from './components/story-details/StoryDetails'
 import Logout from './components/logout/Logout'
+import Footer from './components/footer/Footer'
+import StoryEdit from './components/edit-story/EditStory'
+
 
 
 
 
 function App() {
-  const navigate = useNavigate();
-  const [auth, setAuth] = useState(()=>{
-    localStorage.removeItem('accessToken')
-    return{};
-  })
-
-  const loginSubmitHandler = async (values) =>{
-    const result = await authService.login(values.email, values.password)
-    setAuth(result)
-    localStorage.setItem('accessToken', result.accessToken)
-    navigate(Path.Home)
-  }
-
-
-  const registerSubmitHandler = async (values) =>{
-    const result = await authService.register(values.email, values.password)
-
-    setAuth(result)
-    localStorage.setItem('accessToken', result.accessToken)
-    navigate(Path.Home)
-
-  }
-
-  const logoutHandler = ()=>{
-    setAuth({})
-    localStorage.removeItem('accessToken')
-    navigate(Path.Home)
-  }
-
-  const values ={
-    loginSubmitHandler,
-    registerSubmitHandler,
-    logoutHandler,
-    username: auth.username|| auth.email ,
-    email: auth.email,
-    isAuthenticated: !!auth.accessToken
-  }
-
 
   return (
-    <AuthContext.Provider value={values}>
+    <AuthProvider>
       <div>
       <Header/>
 
@@ -74,11 +39,15 @@ function App() {
       <Route path='/stories' element={<StoryList/>}/>
       <Route path='/stories/add' element={<AddStory/>}/>
       <Route path='/stories/:storyId' element={<StoryDetails/>}/>
+      <Route path='/stories/:storyId/edit' element={<StoryEdit/>}/>
       <Route path="/logout" element={<Logout/>}/>
       </Routes>
+
+      <Footer/>
       </div>
+      
        
-      </AuthContext.Provider>
+      </AuthProvider>
 
     
   )

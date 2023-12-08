@@ -19,3 +19,11 @@ export const create = async (storyData) => {
  const result = await request("POST", baseUrl, storyData)
  return result
 }
+
+export const edit = async (storyId, storyData) => {
+    const result = await request("PUT", `${baseUrl}/${storyId}`, storyData);
+
+    return result;
+};
+
+export const remove = async (storyId) => request("DELETE", `${baseUrl}/${storyId}`);
