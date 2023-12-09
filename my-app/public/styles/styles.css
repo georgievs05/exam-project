@@ -493,7 +493,8 @@ body {
    justify-content: center;
    align-items: flex-start; /* Align items to the top */
    text-align: center; /* Center-align text within the container */
-   margin-top: 90px; /
+   margin-top: 90px; 
+   margin-bottom: 70px;
 }
 
 .all-stories-page .story-card {
@@ -780,6 +781,10 @@ footer {
 #my-profile .profile-actions {
    flex: 1;
    margin: 0 20px;
+}
+
+#my-profile .profile-actions{
+   margin-bottom: 70px;
 }
 
 #my-profile .profile-info h1 {

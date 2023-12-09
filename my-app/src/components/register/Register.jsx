@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import AuthContext from "../../contexts/authContext"
 import useForm from "../../hooks/useForm"
-import {Navigate} from "react-router-dom"
+import {Navigate, Link} from "react-router-dom"
 
 
 const RegisterFormKeys ={
@@ -79,7 +79,7 @@ export default function Register(){
                 </p>
 
                 <p className="field">
-                    <span>If you already have profile click <a href="/login">here</a></span>
+                    <span>If you already have profile click <Link to="/login">here</Link></span>
                 </p>
             </div>
         </form>

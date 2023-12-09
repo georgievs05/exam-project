@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import useForm from "../../hooks/useForm"
 import AuthContext from "../../contexts/authContext";
-import {Navigate} from "react-router-dom"
+import {Navigate, Link} from "react-router-dom"
 
 
 const LoginFormKeys = {
@@ -59,7 +59,7 @@ const Login = () =>{
                     <span>{errMessage.message}</span>
                 </p>
             <p className="field">
-                    <span>If you don't have profile click <a href="/register">here</a></span>
+                    <span>If you don't have profile click <Link to="/register">here</Link></span>
                 </p>
         </form>
        </section>
